@@ -1,0 +1,23 @@
+<%= form_for([@subcategory], :url => category_sub_categories_path(params[:category_id]), :html => {:class => "da-form"}) do |f| %>
+  <% if @sub_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sub_category.errors.count, "error") %> prohibited this sub_category from being saved:</h2>   
+      <ul>
+      <% @sub_category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <%= select_tag :category_id, options_for_select([["Select category", ""]] + category.all.map {|c| [c.name, c.id]}), :onchange => 'select_file(this.value)' %>
+</div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

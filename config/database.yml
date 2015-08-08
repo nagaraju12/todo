@@ -1,0 +1,26 @@
+
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: todo_development
+  pool: 5
+  username: root
+  password: root
+
+test:
+  development:
+  adapter: mysql2
+  encoding: utf8
+  database: todo_test
+  pool: 5
+  username: root
+  password: root
+
+production:
+ development:
+  adapter: mysql2
+  encoding: utf8
+  database: todo_production
+  pool: 5
+  username: root
+  password: root
